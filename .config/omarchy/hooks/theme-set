@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Hook que se ejecuta automáticamente cuando cambias de tema con omarchy-theme-set
+# Recibe el nombre del tema como primer argumento (en formato snake-case)
+
+THEME_NAME=$1
+STARSHIP_DIR="$HOME/.config/omarchy/starship-configs"
+STARSHIP_TARGET="$HOME/.config/starship.toml"
+
+# Verificar si existe una configuración personalizada para este tema
+if [[ -f "$STARSHIP_DIR/$THEME_NAME.toml" ]]; then
+    # Existe configuración personalizada → Usarla
+    cp "$STARSHIP_DIR/$THEME_NAME.toml" "$STARSHIP_TARGET"
+    echo "✓ Starship actualizado con config personalizada para: $THEME_NAME"
+else
+    # No existe → Usar configuración por defecto
+    cp "$STARSHIP_DIR/default.toml" "$STARSHIP_TARGET"
+    echo "✓ Starship actualizado con config por defecto"
+fi
