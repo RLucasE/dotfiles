@@ -38,7 +38,7 @@ $time\
 show_always = true
 style_user = "fg:#2c2525 bg:#a8a9eb"
 style_root = "fg:#2c2525 bg:#a8a9eb"
-format = '[$user ]($style)'
+format = '[ $user ]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
@@ -148,4 +148,4 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:#2c2525 bg:#f38d70"
-format = '[ ♥ $time ]($style)'
+format = '[ ❤️ $time ]($style)'
