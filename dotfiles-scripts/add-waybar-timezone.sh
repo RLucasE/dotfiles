@@ -21,3 +21,8 @@ fi
 sed -i '/"clock": {/a\    '"$TIMEZONE_LINE" "$CONFIG_FILE"
 
 echo "Timezone agregada correctamente al config de waybar"
+
+# Reiniciar waybar
+echo "Reiniciando waybar..."
+killall waybar
+waybar & disown
